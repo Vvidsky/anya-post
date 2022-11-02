@@ -25,7 +25,7 @@ app.get("/", async (req, res) => {
     index: "anime-news",
     "query": {
         "query_string": {
-          "query": "Kaguya sama ultra romantic"
+          "query": String(req.query.query_string)
         }
       }
   });

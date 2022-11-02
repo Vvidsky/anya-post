@@ -41,7 +41,7 @@ export default function Layout() {
                     </div>
                 </div>
             </nav>
-            <div className="container">
+            <div className="container-fluid">
                 <Outlet></Outlet>
             </div>
             <footer className="text-center text-white mt-auto" style={{ backgroundColor: '#f1f1f1' }}>
