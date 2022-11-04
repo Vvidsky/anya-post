@@ -33,7 +33,7 @@ export default function Home() {
         <input className="form-control" type="text" name="news-search" placeholder='search news' onChange={handleChange} value={query}></input>
         <button className="form-control" type="Submit">Search</button>
       </form>
-      <div class="row row-cols-1 row-cols-md-4 row-cols-xl-5 g-4">
+      <div className="row row-cols-1 row-cols-md-4 row-cols-xl-5 g-4">
           {searchResult.map((news) => {
             return (
             <div className="col"><Card key={news._id} news={news} /></div>)

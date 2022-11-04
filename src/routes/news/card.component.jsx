@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default function Card({news}) {
 
   return (
-    <div className='border'>
+    <div className='border h-100'>
       <img className="card-img-top" src={news._source.Thumbnail} alt="haha" />
       <div className="card-body p-3">
         <h5 className="card-title">{news._source.Heading}</h5>

@@ -21,15 +21,21 @@ const client = new Client({
 });
 
 app.get("/", async (req, res) => {
-  const result = await client.search({
-    index: "anime-news",
-    "query": {
-        "query_string": {
-          "query": String(req.query.query_string)
+  try {
+    const result = await client.search({
+      index: "anime-news",
+      "query": {
+          "query_string": {
+            "query": String(req.query.query_string)
+          }
         }
-      }
-  });
-  res.send(result);
+    });
+    res.send(result);
+  } catch (e) {
+    res.send(e);
+  }
+  
+  
 });
 
 app.listen(4000, () => {
