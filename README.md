@@ -2,6 +2,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Members (Section 2)
+6388030 Kulawut Makkamoltham
+6388040 Ariya Phengphon
+6388184 Patiphan Chan
+
 ## Install node_modules
 Run `npm install` in both react folder and anya-post-server.
 
