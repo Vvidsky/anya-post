@@ -1,6 +1,6 @@
 # Anyapost
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Anime & Manga news search engine
 
 ## Members (Section 2)
 6388030 Kulawut Makkamoltham
