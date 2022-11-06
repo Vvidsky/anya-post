@@ -1,15 +1,16 @@
 import React from "react";
 import logo from '../../assets/Logo.png';
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export default function NavBar() {
+  let activeClassName = "nav-link active text-danger";
   return (
     <nav
       className="navbar navbar-expand-lg"
       style={{ backgroundColor: "#8DA99B" }}
     >
       <div className="container-fluid">
-        <Link className="navbar-brand" href="#">
+        <Link to="/" className="navbar-brand">
           <img src={logo} alt="Logo" style={{ height: "50px" }} />
         </Link>
         <button
@@ -26,45 +27,20 @@ export default function NavBar() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" href="#">
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  isActive ? activeClassName : "nav-link"
+                }
+                end
+              >
                 Home
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
               <Link className="nav-link" href="#">
                 Link
               </Link>
-            </li>
-            <li className="nav-item dropdown">
-              <Link
-                className="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Dropdown
-              </Link>
-              <ul className="dropdown-menu">
-                <li>
-                  <Link className="dropdown-item" href="#">
-                    Action
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item" href="#">
-                    Another action
-                  </Link>
-                </li>
-                <li>
-                  <hr className="dropdown-divider" />
-                </li>
-                <li>
-                  <Link className="dropdown-item" href="#">
-                    Something else here
-                  </Link>
-                </li>
-              </ul>
             </li>
             <li className="nav-item">
               <Link className="nav-link disabled">Disabled</Link>
@@ -77,7 +53,7 @@ export default function NavBar() {
               placeholder="Search"
               aria-label="Search"
             />
-            <button className="btn btn-outline-success" type="submit">
+            <button className="btn btn-outline-danger" type="submit">
               Search
             </button>
           </form>

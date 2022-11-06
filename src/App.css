@@ -1,38 +1,59 @@
-.App {
-  text-align: center;
+.mug {
+  float: right;
+  object-fit: contain;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.content {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+div {
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.newsbie img,
+iframe {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.newsbie, .card p{
+  font-size: 16px;
+}
+
+.card h5 {
+  font-size: 18px;
+}
+
+p {
+  margin: 0;
+}
+
+#test {
+    max-width: 960px;
+}
+
+@media only screen and (max-width: 960px) {
+  .newsbie img{
+    max-width: 512px;
+    max-height: 288px
   }
-  to {
-    transform: rotate(360deg);
+
+  .newsbie .mug {
+    max-width: 180px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .newsbie img{
+    max-width: 60vw;
+    max-height: calc(60vw/2);
+  }
+
+  .newsbie .mug {
+    width: 20vw;
   }
 }
