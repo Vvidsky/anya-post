@@ -11,7 +11,7 @@ app.use(cors());
 const client = new Client({
   node: "https://localhost:9200",
   auth: {
-    username: "elastic",
+    username: process.env.ELASTIC_USER,
     password: process.env.ELASTIC_PASSWORD,
   },
   tls: {
@@ -20,16 +20,19 @@ const client = new Client({
   },
 });
 
+const index = "anya-post";
+
 app.get("/", async (req, res) => {
+  let { query_string } = req.query;
   try {
     const result = await client.search({
-      index: "test-anime",
+      index: index,
       query: {
         query_string: {
-          query: String(req.query.query_string),
+          query: query_string,
         },
       },
-      size: 20
+      size: 10000
     });
     res.send(result);
   } catch (e) {
@@ -41,7 +44,7 @@ app.get("/:newsId", async (req, res) => {
   console.log(req.params.newsId)
   try {
     const result = await client.get({
-      index: "test-anime",
+      index: index,
       id: req.params.newsId
     });
     res.send(result);
