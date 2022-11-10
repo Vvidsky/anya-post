@@ -39,24 +39,10 @@ export default function NavBar() {
             </li>
             <li className="nav-item">
               <Link className="nav-link" href="#">
-                Link
+                About
               </Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link disabled">Disabled</Link>
-            </li>
           </ul>
-          <form className="d-flex" role="search">
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button className="btn btn-outline-danger" type="submit">
-              Search
-            </button>
-          </form>
         </div>
       </div>
     </nav>

@@ -1,22 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import './card.component.css'
 
 
 export default function Card({ news, bestMatch }) {
-  const metadata = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque voluptatibus in quis tempore natus officiis, dicta cupiditate asperiores, odio, voluptatum mollitia sapiente culpa quam. Dolore minus architecto provident explicabo quos.";
+  const data = news._source
 
   return (
-    <div className='card border h-100' style={{ height: "450px" }}>
-      <img className="card-img-top" src={news._source.thumbnail} alt="haha" />
+    <div className='card border h-100' style={{ height: "500px" }}>
+      <img className="thumbnail card-img-top h-100" src={data.thumbnail} alt="thumbnail" />
       <div className="card-body p-3">
-        <h5 className="card-title">{news._source.heading} {bestMatch ? <span>[Best Match]</span> : ""}</h5>
-        <p className="card-text" style={{ overflow: "hidden", maxHeight: "9ch" }}>
-          {metadata.substring(0, 100)}<span id="dots">...<Link to={`news/${news._id}`}>continue</Link></span>
+        <h5 className="heading card-title">{data.heading}</h5>
+        <p className="metadata card-text" style={{ overflow: "hidden" }}>
+          {data.metadata}<span id="dots">...</span>
         </p>
-
-
+        <a href={data.url} target="_blank" rel="noreferrer" className="stretched-link btn btn-primary btn-sm mt-2">Read News</a>
       </div>
-      <div className='m-3 mt-0'><a href={news._source.url} target="_blank" rel="noreferrer" className="btn btn-primary align-self-end">Read at Crunchyroll</a></div>
+      
+      <div className="card-footer">
+        <p className="text-muted">Score {news._score} {bestMatch ? "[Best Match]" : ""}</p>
+      </div>
     </div>
   )
 }

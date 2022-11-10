@@ -9,12 +9,13 @@ export default function News() {
 
     useEffect(() => {
         async function loadNews() {
-            const result = await axios.get(`http://localhost:4000/${newsId}`);
-            console.log("result", result.data);
+            const result = await axios.get(`http://localhost:4000/${newsId}`)
+            // console.log("result", result.data);
             setNews(result.data._source);
         }
         loadNews();
-    }, []);
+    }, [newsId]);
+
 
     return (
         // <div className="container-fluid">
