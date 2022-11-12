@@ -19,29 +19,17 @@ export default function Pagination({ nPages, currentPage, setCurrentPage }) {
                     <Link className="page-link"
                         onClick={prevPage}
                         href='#'>
-
-                        Previous
+                        {'<<'}
                     </Link>
                 </li>
                 {pageNumbers.map(pgNumber => (
                     <li key={pgNumber}
                         className={`page-item ${currentPage === pgNumber ? 'active' : ''} `} >
-
-                        <Link onClick={() => setCurrentPage(pgNumber)}
-                            className='page-link'
-                            href='#'>
-
-                            {pgNumber}
-                        </Link>
+                        <Link onClick={() => setCurrentPage(pgNumber)} className='page-link' href='#'>{pgNumber}</Link>
                     </li>
                 ))}
                 <li className="page-item">
-                    <Link className="page-link"
-                        onClick={nextPage}
-                        href='#'>
-
-                        Next
-                    </Link>
+                    <Link className="page-link" onClick={nextPage} href='#'>{'>>'}</Link>
                 </li>
             </ul>
         </nav>

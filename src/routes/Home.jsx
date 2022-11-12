@@ -16,11 +16,18 @@ export default function Home() {
   const currentRecords = searchResult.slice(indexOfFirstRecord, indexOfLastRecord);
   const nPages = Math.ceil(searchResult.length / pageSize)
 
+  const [found, setFound] = useState(true);
+
   async function fetchData(query) {
     const params = new URLSearchParams([['query_string', query]]);
     const result = await axios.get(`http://localhost:4000/`, { params });
     console.log("result", result.data.hits.hits);
     setSearchResult(result.data.hits.hits);
+    if (result.data.hits.hits.length === 0) {
+      setFound(false);
+    } else {
+      setFound(true);
+    }
   }
 
   const handleChange = (e) => {
@@ -32,12 +39,12 @@ export default function Home() {
     e.preventDefault();
     setPageSize(e.target.value);
     setCurrentPage(1);
-    this.forceUpdate();
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
     fetchData(query);
+    setCurrentPage(1);
   }
 
   return (
@@ -47,7 +54,7 @@ export default function Home() {
           <div className="col-md-6 col-xl-9 ">
             <div className="input-group">
               <input className="form-control" type="text" name="news-search" placeholder='search news' onChange={handleChange} value={query}></input>
-              <button className="btn btn btn-outline-dark" onClick={handleSubmit}><i class="bi bi-search"> Search</i></button>
+              <button className="btn btn btn-outline-dark" onClick={handleSubmit}><i className="bi bi-search"> Search</i></button>
             </div>
           </div>
           <div className="col-md-6 col-xl-3">
@@ -71,13 +78,11 @@ export default function Home() {
       </div>
 
 
-      {searchResult.length > pageSize ? <Pagination
+      {found ? searchResult.length > 0 ? <Pagination
         nPages={nPages}
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
-      /> : null}
-
-
+      /> : null : <div className='text-center'>No matched result</div>}
     </div>
   )
 }
