@@ -7,6 +7,7 @@ import Pagination from '../components/pagination/pagination.component';
 export default function Home() {
   const [searchResult, setSearchResult] = useState([]);
   const [query, setQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState('')
 
   // src: https://levelup.gitconnected.com/a-simple-guide-to-pagination-in-react-facd6f785bd0
   const [currentPage, setCurrentPage] = useState(1);
@@ -41,9 +42,10 @@ export default function Home() {
     setCurrentPage(1);
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     fetchData(query);
+    setSearchQuery(query);
     setCurrentPage(1);
   }
 
@@ -71,9 +73,11 @@ export default function Home() {
       </div>
 
       <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4 mt-1 mb-3">
-        {currentRecords.map((news, index) => {
+        {currentRecords.map((news) => {
           return (
-            <div key={news._id} className="col"><Card news={news} bestMatch={index === 0 ? true : false} /></div>)
+            <div key={news._id} className="col">
+              <Card news={news} searchQuery={searchQuery}/>
+            </div>)
         })}
       </div>
 
