@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './pagination.component.css'
+import './pagination.styles.css'
 
 export default function Pagination({ nPages, currentPage, setCurrentPage }) {
 
