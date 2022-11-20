@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import './pagination.component.css'
 
 export default function Pagination({ nPages, currentPage, setCurrentPage }) {
 
@@ -11,7 +12,7 @@ export default function Pagination({ nPages, currentPage, setCurrentPage }) {
     const prevPage = () => {
         if (currentPage !== 1) setCurrentPage(currentPage - 1)
     }
-
+    let active = "page-item active";
     return (
         <nav aria-label="Page navigation example">
             <ul className="pagination justify-content-center">
@@ -24,7 +25,8 @@ export default function Pagination({ nPages, currentPage, setCurrentPage }) {
                 </li>
                 {pageNumbers.map(pgNumber => (
                     <li key={pgNumber}
-                        className={`page-item ${currentPage === pgNumber ? 'active' : ''} `} >
+
+                        className={`page-item ${currentPage === pgNumber ? active : 'page-item'} `}>
                         <Link onClick={() => setCurrentPage(pgNumber)} className='page-link' href='#'>{pgNumber}</Link>
                     </li>
                 ))}

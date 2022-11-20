@@ -4,3 +4,78 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
+
+.border {
+    background-color: rgb(255, 255, 255, 0.70);
+}
+
+.card-title {
+    font-weight: bold;
+}
+
+.stretched-link {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.stretched-link:hover {
+    color: whitesmoke;
+}
+
+/* Read News Button */
+.btn-hover.color {
+    background-image: linear-gradient(to right, #ed6ea0, #ec8c69, #ff5291 , #FBB03B);
+    box-shadow: 0 4px 15px 0 rgba(236, 116, 149, 0.75);
+}
+
+.btn-hover {
+    height: 45px;
+    width: 145px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+ /* Margin around button */
+    margin: 12px 0;
+/* Removes default border around buttons */
+    border: none;
+ /* This affects the gradient background size. By putting a background width to be 300% (above 100%), only the beginning portion of this background will be shown. When hovered, the background will shift towards the end, giving the illustion of a moving gradient*/
+    background-size: 300% 100%;
+/* Curves the button */
+    border-radius: 50px;
+ /* Transition duration and style */
+    moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+}
+
+.btn-hover:hover {
+/* Changes the start position of the gradient background upon hover, giving the illusion of motion. Feel free to play around with this percentage value to see how it works */
+    background-position: 100% 0;
+/* Duration of gradient transition */
+    moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+}
+
+.author_name {
+    background-color: whitesmoke;
+    padding: 3px;
+    border-radius: 6px;
+    margin-left: 6px;
+}
+
+/* Font Awesome Icon */
+.feather-icon {
+    margin-right: 6px;
+}
+
+.star-icon {
+    color: whitesmoke;
+    background-image: linear-gradient(to right, #ed6ea0, #ec8c69, #ff5291 , #FBB03B);
+    padding: 5px;
+    border-radius: 20px;
+    margin-right: 6px;
+}

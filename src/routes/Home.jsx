@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import './Home.styles.css';
 import Card from '../components/news-card/card.component';
 import Pagination from '../components/pagination/pagination.component';
+import front_main from '../assets/front_main.png'
+import not_match from '../assets/not_match.png'
 
 export default function Home() {
   const [searchResult, setSearchResult] = useState([]);
@@ -53,13 +55,17 @@ export default function Home() {
     <div className="d-flex flex-column bd-highlight justify-content-center" style={{ minHeight: "80vh" }}>
       <div className="container mt-3">
         <form className="row g-3 out" onSubmit={handleSubmit}>
-          <div className="col-md-6 col-xl-9 ">
+          <div className="col-md-5 col-xl-11">
+            {/* Front Image */}
+            <div className="front_main">
+                <img width="100%" src={front_main} alt="front_image"/>
+            </div>
             <div className="input-group">
-              <input className="form-control" type="text" name="news-search" placeholder='search news' onChange={handleChange} value={query}></input>
+              <input className="form-control" type="text" name="news-search" placeholder='Search news' onChange={handleChange} value={query}></input>
               <button className="btn btn btn-outline-dark" onClick={handleSubmit}><i className="bi bi-search"> Search</i></button>
             </div>
           </div>
-          <div className="col-md-6 col-xl-3">
+          <div className="col-md-6 col-xl-4">
             <div className="input-group mb-2">
               <label className="input-group-text" htmlFor="inputGroupSelect01">Items per page</label>
               <select className="form-select" id="inputGroupSelect01" onChange={handleSelectChange}>
@@ -67,6 +73,18 @@ export default function Home() {
                 <option value={24}>24</option>
                 <option value={48}>48</option>
               </select>
+            </div>
+          </div>
+          <div className="col-md-5 col-xl-11">
+            <div className="example-query">
+                {/* hereeeee */}
+                <p><b>Example Query:</b></p>
+                <a href="#" className="btn border-bottom">anya</a>
+                <a href="#" className="btn border-bottom">ball</a>
+                <a href="#" className="btn border-bottom">spy fam</a>
+                <a href="#" className="btn border-bottom">kagu sama</a>
+                <a href="#" className="btn border-bottom">query</a>
+                <a href="#" className="btn border-bottom">query</a>
             </div>
           </div>
         </form>
@@ -86,7 +104,9 @@ export default function Home() {
         nPages={nPages}
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
-      /> : null : <div className='text-center'>No matched result</div>}
+      /> : null : <div className='col-md-5 col-xl-11'>
+          <img width="100%" src={not_match} alt='not_match'/>
+        </div>}
     </div>
   )
 }

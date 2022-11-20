@@ -1,13 +1,14 @@
 import React from "react";
-import logo from '../../assets/Logo.png';
+import logo from '../../assets/logo_test.png';
 import { Link, NavLink } from "react-router-dom";
+import './nav-bar.component.css';
 
 export default function NavBar() {
-  let activeClassName = "nav-link active text-danger";
+  let activeClassName = "nav-link active";
   return (
     <nav
       className="navbar navbar-expand-lg"
-      style={{ backgroundColor: "#8DA99B" }}
+      style={{ backgroundColor: '#8DA99B' }}
     >
       <div className="container-fluid">
         <Link to="/" className="navbar-brand">

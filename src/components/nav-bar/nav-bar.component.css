@@ -1,0 +1,12 @@
+.nav-link {
+    color: whitesmoke;
+}
+
+.nav-link:hover {
+    color: #394c43;
+}
+
+.active {
+    background-color: rgb(75, 100, 88, 0.25);
+    border-radius: 10%;
+}
