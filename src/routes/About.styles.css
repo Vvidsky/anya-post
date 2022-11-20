@@ -14,7 +14,8 @@ html, body{
     padding: 0.5em;
     border-radius: 16px;
     text-align: center;
-    background-image: linear-gradient(to right, #ed6ea0, #ec8c69, #ff5291 , #FBB03B);}
+    background-image: linear-gradient(to right, #ed6ea0, #ec8c69, #ff5291 , #FBB03B);
+}
 
 /* Align Meet the Team Card to the Center */
 .row {
@@ -26,7 +27,7 @@ html, body{
     padding: 0.25rem;
 }
 
-.card-text {
+.card-text-des {
     color: #ed6ea0;
 }
 

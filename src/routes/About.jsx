@@ -16,7 +16,7 @@ export default function About() {
                 <img class="card-img-top" width="100%" src={not_match} alt='member-1'/>
                 <div class="card-body text-center">
                     <h5 class="card-title mb-0">CEO Kulawut Makkamoltham</h5>
-                    <div class="card-text">Web Developer</div>
+                    <div class="card-text-des">Web Developer</div>
                 </div>
                 <div className='contact-me'>
                     {/*Contact */}
@@ -33,7 +33,7 @@ export default function About() {
                 <img class="card-img-top" width="100%" src={not_match} alt='member-2'/>
                 <div class="card-body text-center">
                     <h5 class="card-title mb-0">Ariya Phengphon</h5>
-                    <div class="card-text">Web Developer</div>
+                    <div class="card-text-des">Web Developer</div>
                 </div>
                 <div className='contact-me'>
                     {/*Contact */}
@@ -50,7 +50,7 @@ export default function About() {
                 <img class="card-img-top" width="100%" src={not_match} alt='member-3'/>
                 <div class="card-body text-center">
                     <h5 class="card-title mb-0">Patiphan Chan</h5>
-                    <div class="card-text">Web Developer</div>
+                    <div class="card-text-des">Web Developer</div>
                 </div>
                 <div className='contact-me'>
                     {/*Contact */}
