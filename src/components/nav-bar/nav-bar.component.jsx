@@ -39,9 +39,15 @@ export default function NavBar() {
               </NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" href="#">
+            <NavLink
+                to="/about"
+                className={({ isActive }) =>
+                isActive ? activeClassName : "nav-link"
+              }
+              end
+              >
                 About
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </div>

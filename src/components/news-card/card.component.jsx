@@ -1,9 +1,7 @@
 import React from 'react';
 import './card.component.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStar } from '@fortawesome/free-solid-svg-icons'
-import { faFeather } from '@fortawesome/free-solid-svg-icons'
-
+import { faStar, faFeather } from '@fortawesome/free-solid-svg-icons'
 
 function Card({ news, searchQuery }) {
   const data = news._source;

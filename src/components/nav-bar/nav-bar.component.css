@@ -7,6 +7,10 @@
 }
 
 .active {
-    background-color: rgb(75, 100, 88, 0.25);
-    border-radius: 10%;
+    background-color: rgba(97, 100, 75, 0.25);
+    border-radius: 16px;
+}
+
+.nav-item {
+    margin: 0px 8px;
 }

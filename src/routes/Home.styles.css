@@ -9,15 +9,15 @@ html, body{
     font-family: 'Open Sans';
 }
 
-.btn {
-    background-color:  rgb(255, 255, 255, 0.5);
+.tag {
+    background-color:  rgb(255, 255, 255, 0.75);
     margin: 8px 8px 0 0;
     text-decoration: none;
     color: black;
     border: none;
 }
 
-.btn:hover {
+.tag:hover {
     background-color: white;
     color: black;
 }
@@ -25,4 +25,15 @@ html, body{
 .example-query {
     padding: 1rem;
     border-radius: 6px;
+}
+
+.form-control {
+    height: 100%;
+    padding: 0.75rem;
+    background-color: rgb(255, 255, 255, 0.75);
+}
+
+.btn-outline-dark {
+    height: 100%;
+    padding: 0.75rem;
 }

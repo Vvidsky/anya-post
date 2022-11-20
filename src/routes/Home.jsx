@@ -78,20 +78,21 @@ export default function Home() {
           </div>
           <div className="col-md-5 col-xl-11">
             <div className="example-query">
-                {/* hereeeee */}
+                {/* hereeeee ;-; */}
                 <p><b>Example Query:</b></p>
-                <Link href="#" className="btn border-bottom">anya</Link>
-                <Link href="#" className="btn border-bottom">ball</Link>
-                <Link href="#" className="btn border-bottom">spy fam</Link>
-                <Link href="#" className="btn border-bottom">kagu sama</Link>
-                <Link href="#" className="btn border-bottom">evangelion 3.0 trice</Link>
-                <Link href="#" className="btn border-bottom">query</Link>
+                <Link href="#" className="btn border-bottom tag">anya</Link>
+                <Link href="#" className="btn border-bottom tag">ball</Link>
+                <Link href="#" className="btn border-bottom tag">ball</Link>
+                <Link href="#" className="btn border-bottom tag">spy fam</Link>
+                <Link href="#" className="btn border-bottom tag">kagu sama</Link>
+                <Link href="#" className="btn border-bottom tag">evangelion 3.0 trice</Link>
+                <Link href="#" className="btn border-bottom tag">chain man</Link>
             </div>
           </div>
         </form>
       </div>
 
-      {searchQuery? <h3 className="text-center">Search result for {searchQuery}</h3> : null}
+      {searchQuery? <h3 className="text-center">Search result for <b>"{searchQuery}"</b></h3> : null}
 
       <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4 mt-1 mb-3">
         {currentRecords.map((news) => {
