@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Home.styles.css';
 import Card from '../components/news-card/card.component';
 import Pagination from '../components/pagination/pagination.component';
@@ -79,16 +80,18 @@ export default function Home() {
             <div className="example-query">
                 {/* hereeeee */}
                 <p><b>Example Query:</b></p>
-                <a href="#" className="btn border-bottom">anya</a>
-                <a href="#" className="btn border-bottom">ball</a>
-                <a href="#" className="btn border-bottom">spy fam</a>
-                <a href="#" className="btn border-bottom">kagu sama</a>
-                <a href="#" className="btn border-bottom">query</a>
-                <a href="#" className="btn border-bottom">query</a>
+                <Link href="#" className="btn border-bottom">anya</Link>
+                <Link href="#" className="btn border-bottom">ball</Link>
+                <Link href="#" className="btn border-bottom">spy fam</Link>
+                <Link href="#" className="btn border-bottom">kagu sama</Link>
+                <Link href="#" className="btn border-bottom">evangelion 3.0 trice</Link>
+                <Link href="#" className="btn border-bottom">query</Link>
             </div>
           </div>
         </form>
       </div>
+
+      {searchQuery? <h3 className="text-center">Search result for {searchQuery}</h3> : null}
 
       <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4 mt-1 mb-3">
         {currentRecords.map((news) => {

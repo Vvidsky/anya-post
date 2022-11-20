@@ -12,14 +12,16 @@ function Card({ news, searchQuery }) {
 
   function getHighlightedText(text, highlight) {
     // Split text on higlight term, include term itself into parts, ignore case
-    var parts = text.split(new RegExp(`(${highlight})`, "gi"));
-    return parts.map((part, index) => (
+    if (text) {
+      var parts = text.split(new RegExp(`(${highlight})`, "gi"));
+      return parts.map((part, index) => (
         part.toLowerCase().match(regexp) ? (
-          <b style={{ backgroundColor: "rgb(237, 110, 160, 0.75)", color: "white", padding: "2px", borderRadius: "5px"}}>{part}</b>
+          <b style={{ backgroundColor: "rgb(237, 110, 160, 0.75)", color: "white", padding: "2px", borderRadius: "5px" }}>{part}</b>
         ) : (
           part
         )
-    ));
+      ));
+    }
   }
 
   return (
@@ -29,21 +31,21 @@ function Card({ news, searchQuery }) {
         <h5 className="heading card-title">
           {getHighlightedText(data.heading, searchQuery)}
         </h5>
-        <b style={{color: "#ff5291"}}>
+        <b style={{ color: "#ff5291" }}>
           <FontAwesomeIcon className="feather-icon" icon={faFeather} />
           {data.date_created}
         </b>
         <b className='author_name'>
           {data.author}
-        </b> 
+        </b>
         <p className="metadata card-text" style={{ overflow: "hidden" }}>
-          {data.metadata}<span id="dots">...</span>
+          {getHighlightedText(data.metadata, searchQuery)}<span id="dots">...</span>
         </p>
-        <button type="button" class="btn-hover color" style={{marginTop: "0.5em"}}>
+        <button type="button" className="btn-hover color" style={{ marginTop: "0.5em" }}>
           <a href={data.url} target="_blank" rel="noreferrer" className="stretched-link">Read News</a>
         </button>
       </div>
-      
+
       <div className="card-footer">
         <p className="text-muted"><FontAwesomeIcon className="star-icon" icon={faStar} />Score {news._score}</p>
       </div>
