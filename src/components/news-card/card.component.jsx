@@ -14,9 +14,9 @@ function Card({ news, searchQuery }) {
     // Split text on higlight term, include term itself into parts, ignore case
     if (text) {
       var parts = text.split(new RegExp(`(${highlight})`, "gi"));
-      return parts.map((part, index) => (
+      return parts.map((part) => (
         part.toLowerCase().match(regexp) ? (
-          <b style={{ backgroundColor: "rgb(237, 110, 160, 0.75)", color: "white", padding: "2px", borderRadius: "5px" }}>{part}</b>
+          <b key={Math.random()} style={{ backgroundColor: "rgb(237, 110, 160, 0.75)", color: "white", padding: "2px", borderRadius: "5px" }}>{part}</b>
         ) : (
           part
         )

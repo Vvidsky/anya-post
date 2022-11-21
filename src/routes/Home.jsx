@@ -1,6 +1,5 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import './Home.styles.css';
 import Card from '../components/news-card/card.component';
 import Pagination from '../components/pagination/pagination.component';
@@ -45,10 +44,20 @@ export default function Home() {
     setCurrentPage(1);
   }
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     fetchData(query);
     setSearchQuery(query);
+    console.log([e.target.name]);
+    setCurrentPage(1);
+  }
+
+  const queryButton = (e) => {
+    e.preventDefault();
+    const { value } = e.target
+    fetchData(value);
+    setSearchQuery(value);
+    setQuery(value)
     setCurrentPage(1);
   }
 
@@ -62,7 +71,7 @@ export default function Home() {
                 <img width="100%" src={front_main} alt="front_image"/>
             </div>
             <div className="input-group">
-              <input className="form-control" type="text" name="news-search" placeholder='Search news' onChange={handleChange} value={query}></input>
+              <input className="form-control" type="text" name="query" placeholder='Search news' onChange={handleChange} value={query}></input>
               <button className="btn btn btn-outline-dark" onClick={handleSubmit}><i className="bi bi-search"> Search</i></button>
             </div>
           </div>
@@ -80,12 +89,12 @@ export default function Home() {
             <div className="example-query">
                 {/* hereeeee */}
                 <p><b>Example Query:</b></p>
-                <Link href="#" className="btn border-bottom">anya</Link>
-                <Link href="#" className="btn border-bottom">ball</Link>
-                <Link href="#" className="btn border-bottom">spy fam</Link>
-                <Link href="#" className="btn border-bottom">kagu sama</Link>
-                <Link href="#" className="btn border-bottom">evangelion 3.0 trice</Link>
-                <Link href="#" className="btn border-bottom">query</Link>
+                <button className="btn border-bottom" onClick={queryButton} value="anya">anya</button>
+                <button className="btn border-bottom" onClick={queryButton} value="ball">ball</button>
+                <button className="btn border-bottom" onClick={queryButton} value="spy fam">spy fam</button>
+                <button className="btn border-bottom" onClick={queryButton} value="kagu sama">kagu sama</button>
+                <button className="btn border-bottom" onClick={queryButton} value="evangelion 3.0 trice">evangelion 3.0 trice</button>
+                <button className="btn border-bottom" onClick={queryButton} value="query">query</button>
             </div>
           </div>
         </form>
