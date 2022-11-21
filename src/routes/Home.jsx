@@ -67,7 +67,7 @@ export default function Home() {
           {/* Front Image */}
           <div className="front_main">
                 <img width="100%" src={front_main} className="d-block mx-auto" style={{maxWidth:"800px"}} alt="front_image"/>
-            </div>
+          </div>
           <div className="col-md-12 col-xl-8">
             <div className="input-group">
               <input className="form-control" type="text" name="query" placeholder='Search news' onChange={handleChange} value={query}></input>

@@ -3,10 +3,13 @@ import anya_profile from "../../assets/anya_profile.png";
 import bond_profile from "../../assets/bond_profile.png";
 import loid_profile from "../../assets/loid_profile.png";
 import github_logo from "../../assets/github.svg";
+import front_about from '../../assets/front_about.png';
+
 
 export default function About() {
   return (
     <div class="container">
+      <img width="100%" src={front_about} className="d-block mx-auto" style={{maxWidth:"1000px", marginTop: "2%"}} alt="front_image"/>
       <div className="header">
         <h2 class="fw-light text-white">Meet the Team</h2>
       </div>
