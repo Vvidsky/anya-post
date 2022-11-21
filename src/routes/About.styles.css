@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Jua&display=swap');
+
+
+html, body{
+    margin: 0;
+    font-family: 'Open Sans';
+}
+
+/* Header Meet the Team */
+.fw-light {
+    font-family: 'Jua';
+    width: 100%;
+    padding: 0.5em;
+    border-radius: 16px;
+    text-align: center;
+    background-image: linear-gradient(to right, #ed6ea0, #ec8c69, #ff5291 , #FBB03B);
+}
+
+/* Align Meet the Team Card to the Center */
+.row {
+    justify-content: center;
+}
+
+.card-img-top {
+    margin-top: 1rem;
+    padding: 0.25rem;
+}
+
+.card-text-des {
+    color: #ed6ea0;
+}
+
+/* Github */
+.github-tag {
+    background-color: whitesmoke;
+}
+.github-logo {
+    
+    margin: 1em;
+    width: 32px;
+}
+
+.github-name {
+    text-decoration: none;
+    color: black;
+}

@@ -19,13 +19,14 @@
 .pagination > li > span:focus,
 .pagination > li > span:hover
 {
-    color: #5a5a5a;
+    color: #ffffff;
     background-color: #eee;
     border-color: #ddd;
 }
 
 .pagination > .active > a {
-    background-image: linear-gradient(to right, #ed6ea0, #ec8c69, #ff5291 , #FBB03B);
+    color: whitesmoke;
+    background-image: linear-gradient(to right, #ed6ea0, #ec8c69);
 }
 
 .pagination > .active > a:hover

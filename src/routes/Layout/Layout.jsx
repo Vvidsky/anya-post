@@ -14,7 +14,7 @@ export default function Layout() {
                 {/* Grid container */}
                 {/* Copyright */}
                 <div className="text-center text-white p-3" style={{ backgroundColor: '#8DA99B' }}>
-                    © 2022 Anya Post <a className="text-white github-link" href="https://github.com/Vvidsky/anya-post" target="_blank" rel="noreferrer"> https://github.com/Vvidsky/anya-post</a>
+                    © 2022 Anya Post <a className="github-link" href="https://github.com/Vvidsky/anya-post" target="_blank" rel="noreferrer"> https://github.com/Vvidsky/anya-post</a>
                 </div>
                 {/* Copyright */}
             </footer>

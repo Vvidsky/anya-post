@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './pagination.styles.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
 export default function Pagination({ nPages, currentPage, setCurrentPage }) {
 
@@ -20,7 +22,7 @@ export default function Pagination({ nPages, currentPage, setCurrentPage }) {
                     <Link className="page-link"
                         onClick={prevPage}
                         href='#'>
-                        {'<<'}
+                        <FontAwesomeIcon className="arrow-left" icon={faArrowLeft} />
                     </Link>
                 </li>
                 {pageNumbers.map(pgNumber => (
@@ -31,7 +33,9 @@ export default function Pagination({ nPages, currentPage, setCurrentPage }) {
                     </li>
                 ))}
                 <li className="page-item">
-                    <Link className="page-link" onClick={nextPage} href='#'>{'>>'}</Link>
+                    <Link className="page-link" onClick={nextPage} href='#'>
+                        <FontAwesomeIcon className="arrow-left" icon={faArrowRight} />
+                    </Link>
                 </li>
             </ul>
         </nav>
