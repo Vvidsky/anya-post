@@ -1,10 +1,10 @@
 import React from 'react';
 import './card.component.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon }  from '@fortawesome/react-fontawesome'
 import { faStar, faFeather } from '@fortawesome/free-solid-svg-icons'
-import { crunchyroll_logo } from '../../assets/crunchyroll_logo.png'
-import { CBR_logo } from '../../assets/cbr_logo.png'
-import { animeGeek_logo } from '../../assets/animeGeek_logo.png'
+import  crunchyroll_logo  from '../../assets/crunchyroll_logo.png'
+import CBR_logo  from '../../assets/cbr_logo.png'
+import animeGeek_logo from '../../assets/animeGeek_logo.png'
 
 function Card({ news, searchQuery }) {
   const data = news._source;
@@ -29,11 +29,11 @@ function Card({ news, searchQuery }) {
     const selectorElement = document.getElementById("logo_img");
     // Conditional Images (logo)
     if (publisher === "Crunchyroll") {
-      selectorElement.innerHTML = `<img src="${crunchyroll_logo}" alt="crunchyroll_logo" />`;
+      selectorElement.innerHTML = <img src={crunchyroll_logo} alt="crunchyroll_logo" />;
     } else if (publisher === "CBR") {
-      selectorElement.innerHTML = `<img src="${CBR_logo}" alt="CBR_logo" />`;
+      selectorElement.innerHTML = <img src={CBR_logo} alt="CBR_logo" />
     } else if (publisher === "Anime Geek") {
-      selectorElement.innerHTML = `<img src="${animeGeek_logo}" alt="animeGeek_logo" />`;
+      selectorElement.innerHTML = <img src={animeGeek_logo} alt="animeGeek_logo" />;
     }
     return selectorElement;
   }
