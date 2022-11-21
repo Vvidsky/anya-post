@@ -30,6 +30,7 @@ app.get("/", async (req, res) => {
       query: {
         query_string: {
           query: query_string,
+          fields: ["heading^2", "metadata^2", "body_content"],
         },
       },
       size: 10000
