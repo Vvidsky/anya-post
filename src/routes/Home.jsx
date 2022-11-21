@@ -89,12 +89,12 @@ export default function Home() {
             <div className="example-query">
                 {/* hereeeee ;-; */}
                 <p><b>Example Query:</b></p>
-                <button className="btn border-bottom" onClick={queryButton} value="anya">anya</button>
-                <button className="btn border-bottom" onClick={queryButton} value="ball">ball</button>
-                <button className="btn border-bottom" onClick={queryButton} value="spy fam">spy fam</button>
-                <button className="btn border-bottom" onClick={queryButton} value="kagu sama">kagu sama</button>
-                <button className="btn border-bottom" onClick={queryButton} value="evangelion 3.0 trice">evangelion 3.0 trice</button>
-                <button className="btn border-bottom" onClick={queryButton} value="query">query</button>
+                <button className="btn border-bottom tag" onClick={queryButton} value="anya">anya</button>
+                <button className="btn border-bottom tag" onClick={queryButton} value="ball">ball</button>
+                <button className="btn border-bottom tag" onClick={queryButton} value="spy fam">spy fam</button>
+                <button className="btn border-bottom tag" onClick={queryButton} value="kagu sama">kagu sama</button>
+                <button className="btn border-bottom tag" onClick={queryButton} value="evangelion 3.0 trice">evangelion 3.0 trice</button>
+                <button className="btn border-bottom tag" onClick={queryButton} value="query">query</button>
             </div>
           </div>
         </form>
