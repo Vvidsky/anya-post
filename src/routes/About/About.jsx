@@ -1,5 +1,7 @@
 import "./About.styles.css";
-import not_match from "../../assets/not_match.png";
+import anya_profile from "../../assets/anya_profile.png";
+import bond_profile from "../../assets/bond_profile.png";
+import loid_profile from "../../assets/loid_profile.png";
 import github_logo from "../../assets/github.svg";
 
 export default function About() {
@@ -10,32 +12,32 @@ export default function About() {
       </div>
       <div class="row">
         {/* Team Member 1 */}
-        <div class="col-xl-3 col-md-6 mb-4">
-          <div class="card border-0 shadow">
+        <div class="col-xl-2 col-md-6 mb-4">
+          <div class="card border-0 shadow-sm p-3 mb-5 bg-white rounded">
             <img
               class="card-img-top"
               width="100%"
-              src={not_match}
+              src={anya_profile}
               alt="member-1"
             />
             <div class="card-body text-center">
-              <h5 class="card-title mb-0">CEO Kulawut Makkamoltham</h5>
+              <h5 class="card-title mb-0">Kulawut<br/>Makkamoltham</h5>
               <div class="card-text-des">Web Developer</div>
             </div>
             <div className="contact-me">
               {/*Contact */}
               <p className="github-tag border-top">
-                <img
-                  className="github-logo"
-                  src={github_logo}
-                  alt="github-logo"
-                />
                 <a
                   className="github-name"
                   href="https://github.com/Vvidsky"
                   target="_blank"
                   rel="noreferrer"
                 >
+                  <img
+                  className="github-logo"
+                  src={github_logo}
+                  alt="github-logo"
+                  />
                   Vvidsky
                 </a>
               </p>
@@ -43,33 +45,33 @@ export default function About() {
           </div>
         </div>
 
-        {/* Team Member 1 */}
-        <div class="col-xl-3 col-md-6 mb-4">
-          <div class="card border-0 shadow">
+        {/* Team Member 2 */}
+        <div class="col-xl-2 col-md-6 mb-4">
+          <div class="card border-0 shadow-sm p-3 mb-5 bg-white rounded">
             <img
               class="card-img-top"
               width="100%"
-              src={not_match}
+              src={bond_profile}
               alt="member-2"
             />
             <div class="card-body text-center">
-              <h5 class="card-title mb-0">Ariya Phengphon</h5>
+              <h5 class="card-title mb-0">Ariya<br/>Phengphon</h5>
               <div class="card-text-des">Web Developer</div>
             </div>
             <div className="contact-me">
               {/*Contact */}
               <p className="github-tag border-top">
-                <img
-                  className="github-logo"
-                  src={github_logo}
-                  alt="github-logo"
-                />
                 <a
                   className="github-name"
                   href="https://github.com/ChanAndKlee"
                   target="_blank"
                   rel="noreferrer"
                 >
+                  <img
+                  className="github-logo"
+                  src={github_logo}
+                  alt="github-logo"
+                  />
                   ChanAndKlee
                 </a>
               </p>
@@ -78,33 +80,33 @@ export default function About() {
         </div>
 
         {/* Team Member 3 */}
-        <div class="col-xl-3 col-md-6 mb-4">
-          <div class="card border-0 shadow">
+        <div class="col-xl-2 col-md-6 mb-4">
+          <div class="card border-0 shadow-sm p-3 mb-5 bg-white rounded">
             <img
               class="card-img-top"
               width="100%"
-              src={not_match}
+              src={loid_profile}
               alt="member-3"
             />
             <div class="card-body text-center">
-              <h5 class="card-title mb-0">Patiphan Chan</h5>
+              <h5 class="card-title mb-0">Patiphan<br/>Chan</h5>
               <div class="card-text-des">Web Developer</div>
             </div>
             <div className="contact-me">
               {/*Contact */}
               <p className="github-tag border-top">
-                <img
-                  className="github-logo"
-                  src={github_logo}
-                  alt="github-logo"
-                />
                 <a
                   className="github-name"
                   href="https://github.com/ST-AR-X"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Golf's Github
+                  <img
+                  className="github-logo"
+                  src={github_logo}
+                  alt="github-logo"
+                  />
+                  ST-AR-X
                 </a>
               </p>
             </div>

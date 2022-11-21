@@ -53,7 +53,7 @@ export default function Home() {
 
   const queryButton = (e) => {
     e.preventDefault();
-    const { value } = e.target
+    const { value } = e.target;
     fetchData(value);
     setSearchQuery(value);
     setQuery(value)
@@ -86,14 +86,13 @@ export default function Home() {
           </div>
           <div className="col-md-12">
             <div className="example-query">
-                {/* hereeeee ;-; */}
                 <p><b>Example Query:</b></p>
                 <button className="btn border-bottom tag" onClick={queryButton} value="anya">anya</button>
                 <button className="btn border-bottom tag" onClick={queryButton} value="ball">ball</button>
                 <button className="btn border-bottom tag" onClick={queryButton} value="spy fam">spy fam</button>
                 <button className="btn border-bottom tag" onClick={queryButton} value="kagu sama">kagu sama</button>
                 <button className="btn border-bottom tag" onClick={queryButton} value="evangelion 3.0 trice">evangelion 3.0 trice</button>
-                <button className="btn border-bottom tag" onClick={queryButton} value="query">query</button>
+                <button className="btn border-bottom tag" onClick={queryButton} value="chain man">chain man</button>
             </div>
           </div>
         </form>
