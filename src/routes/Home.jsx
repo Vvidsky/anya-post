@@ -48,7 +48,6 @@ export default function Home() {
     e.preventDefault();
     fetchData(query);
     setSearchQuery(query);
-    console.log([e.target.name]);
     setCurrentPage(1);
   }
 
@@ -65,11 +64,11 @@ export default function Home() {
     <div className="d-flex flex-column bd-highlight justify-content-center" style={{ minHeight: "80vh" }}>
       <div className="container mt-3">
         <form className="row g-3 out" onSubmit={handleSubmit}>
-          <div className="col-md-5 col-xl-11">
-            {/* Front Image */}
-            <div className="front_main">
-                <img width="100%" src={front_main} alt="front_image"/>
+          {/* Front Image */}
+          <div className="front_main">
+                <img width="100%" src={front_main} className="d-block mx-auto" style={{maxWidth:"800px"}} alt="front_image"/>
             </div>
+          <div className="col-md-12 col-xl-8">
             <div className="input-group">
               <input className="form-control" type="text" name="query" placeholder='Search news' onChange={handleChange} value={query}></input>
               <button className="btn btn btn-outline-dark" onClick={handleSubmit}><i className="bi bi-search"> Search</i></button>
@@ -85,7 +84,7 @@ export default function Home() {
               </select>
             </div>
           </div>
-          <div className="col-md-5 col-xl-11">
+          <div className="col-md-12">
             <div className="example-query">
                 {/* hereeeee ;-; */}
                 <p><b>Example Query:</b></p>
@@ -116,8 +115,8 @@ export default function Home() {
         nPages={nPages}
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
-      /> : null : <div className='col-md-5 col-xl-11'>
-          <img width="100%" src={not_match} alt='not_match'/>
+      /> : null : <div className='col-md-12'>
+          <img width="100%" src={not_match} className="d-block mx-auto" style={{maxWidth:"800px"}} alt='not_match'/>
         </div>}
     </div>
   )
