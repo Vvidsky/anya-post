@@ -60,13 +60,22 @@ export default function Home() {
     setCurrentPage(1);
   }
 
+  const exampleQueries = [
+    "anya", "ball", "spy fam", "kaguya sama spring", 
+    "evangelion 3.0 trice", "chainsaw man", "pokemon", 
+    "Anime Geek", "Crunchyroll", "CBR", "basketball", 
+    "Mikikazu Komatsu", "Liam", "Cordell McWilliams",
+    "jojo's bizarre one punch", "collaboration", "new season",
+    "slime", "Iruma", "Forger family"
+  ]
+
   return (
     <div className="d-flex flex-column bd-highlight justify-content-center" style={{ minHeight: "80vh" }}>
       <div className="container mt-3">
         <form className="row g-3 out" onSubmit={handleSubmit}>
           {/* Front Image */}
           <div className="front_main">
-                <img width="100%" src={front_main} className="d-block mx-auto" style={{maxWidth:"800px"}} alt="front_image"/>
+            <img width="100%" src={front_main} className="d-block mx-auto" style={{ maxWidth: "800px" }} alt="front_image" />
           </div>
           <div className="col-md-12 col-xl-8">
             <div className="input-group">
@@ -86,25 +95,26 @@ export default function Home() {
           </div>
           <div className="col-md-12">
             <div className="example-query">
-                <p><b>Example Query:</b></p>
-                <button className="btn border-bottom tag" onClick={queryButton} value="anya">anya</button>
-                <button className="btn border-bottom tag" onClick={queryButton} value="ball">ball</button>
-                <button className="btn border-bottom tag" onClick={queryButton} value="spy fam">spy fam</button>
-                <button className="btn border-bottom tag" onClick={queryButton} value="kagu sama">kagu sama</button>
-                <button className="btn border-bottom tag" onClick={queryButton} value="evangelion 3.0 trice">evangelion 3.0 trice</button>
-                <button className="btn border-bottom tag" onClick={queryButton} value="chain man">chain man</button>
+              <p><b>Example Query:</b></p>
+              {exampleQueries.map(keyword =>
+                <button key={keyword}
+                  className="btn border-bottom tag"
+                  onClick={queryButton}
+                  value={keyword}>
+                  {keyword}
+                </button>)}
             </div>
           </div>
         </form>
       </div>
 
-      {searchQuery? <h3 className="text-center">Search result for <b>"{searchQuery}"</b></h3> : null}
+      {searchQuery ? <h3 className="text-center">Search result for <b>"{searchQuery}"</b></h3> : null}
 
-      <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4 mt-1 mb-3">
+      <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-3 row-cols-xxl-4 g-4 mt-1 mb-3">
         {currentRecords.map((news) => {
           return (
             <div key={news._id} className="col">
-              <Card news={news} searchQuery={searchQuery}/>
+              <Card news={news} searchQuery={searchQuery} />
             </div>)
         })}
       </div>
@@ -115,8 +125,8 @@ export default function Home() {
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
       /> : null : <div className='col-md-12'>
-          <img width="100%" src={not_match} className="d-block mx-auto" style={{maxWidth:"800px"}} alt='not_match'/>
-        </div>}
+        <img width="100%" src={not_match} className="d-block mx-auto" style={{ maxWidth: "800px" }} alt='not_match' />
+      </div>}
     </div>
   )
 }
