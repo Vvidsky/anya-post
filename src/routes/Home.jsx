@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import './Home.styles.css';
 import Card from '../components/news-card/card.component';
 import Pagination from '../components/pagination/pagination.component';
-import front_main from '../assets/front_main.png'
+import SearchForm from '../components/searchform/search-form.component.jsx'
 import not_match from '../assets/not_match.png'
 
 export default function Home() {
@@ -60,52 +60,10 @@ export default function Home() {
     setCurrentPage(1);
   }
 
-  const exampleQueries = [
-    "anya", "ball", "spy fam", "kaguya sama spring", 
-    "evangelion 3.0 thrice", "chainsaw man", "pokemon", 
-    "Anime Geek", "Crunchyroll", "CBR", "basketball", 
-    "Mikikazu Komatsu", "Liam", "Cordell McWilliams",
-    "jojo's bizarre one punch", "collaboration", "new season",
-    "slime", "Iruma", "Forger family"
-  ]
-
   return (
     <div className="d-flex flex-column bd-highlight justify-content-center" style={{ minHeight: "80vh" }}>
       <div className="container mt-3">
-        <form className="row g-3 out" onSubmit={handleSubmit}>
-          {/* Front Image */}
-          <div className="front_main">
-            <img width="100%" src={front_main} className="d-block mx-auto" style={{ maxWidth: "800px" }} alt="front_image" />
-          </div>
-          <div className="col-md-12 col-xl-8">
-            <div className="input-group">
-              <input className="form-control" type="text" name="query" placeholder='Search news' onChange={handleChange} value={query}></input>
-              <button className="btn btn btn-outline-dark" onClick={handleSubmit}><i className="bi bi-search"> Search</i></button>
-            </div>
-          </div>
-          <div className="col-md-6 col-xl-4">
-            <div className="input-group mb-2">
-              <label className="input-group-text" htmlFor="inputGroupSelect01">Items per page</label>
-              <select className="form-select" id="inputGroupSelect01" onChange={handleSelectChange}>
-                <option defaultValue={12}>12</option>
-                <option value={24}>24</option>
-                <option value={48}>48</option>
-              </select>
-            </div>
-          </div>
-          <div className="col-md-12">
-            <div className="example-query">
-              <p><b>Example Query:</b></p>
-              {exampleQueries.map(keyword =>
-                <button key={keyword}
-                  className="btn border-bottom tag"
-                  onClick={queryButton}
-                  value={keyword}>
-                  {keyword}
-                </button>)}
-            </div>
-          </div>
-        </form>
+        <SearchForm handleChange={(e) => handleChange(e)} handleSelectChange={(e) => handleSelectChange(e)} handleSubmit={(e) => handleSubmit(e)} query={query} queryButton={(e) => queryButton(e)}></SearchForm>
       </div>
 
       {searchQuery ? <h3 className="text-center">Search result for <b>"{searchQuery}"</b></h3> : null}
