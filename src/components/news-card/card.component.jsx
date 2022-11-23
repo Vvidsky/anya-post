@@ -1,9 +1,9 @@
 import React from 'react';
 import './card.component.css'
-import { FontAwesomeIcon }  from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar, faFeather } from '@fortawesome/free-solid-svg-icons'
 import crunchyroll_logo from '../../assets/crunchyroll_logo.png'
-import CBR_logo  from '../../assets/cbr_logo.png'
+import CBR_logo from '../../assets/cbr_logo.png'
 import animeGeek_logo from '../../assets/animeGeek_logo.png'
 
 function Card({ news, searchQuery }) {
@@ -35,7 +35,9 @@ function Card({ news, searchQuery }) {
     } else if (publisher === "Anime Geek") {
       selectedImage = animeGeek_logo;
     }
-    return <img src={selectedImage} className="img-fluid" style={{maxWidth:"100px", float:"right"}} alt="crunchyroll_logo" />;
+    return <img src={selectedImage} id="logo_img"
+      className="img-fluid d-inline" style={{ maxWidth: "100px", float: "right" }}
+      alt="crunchyroll_logo" />;
   }
 
   return (
@@ -62,11 +64,8 @@ function Card({ news, searchQuery }) {
 
       <div className="card-footer">
         <p className="text-muted"><FontAwesomeIcon className="d-inline star-icon" icon={faStar} />Score {news._score}
-          <div id="logo_img" className="d-inline">
-          { displayLogo(data.Publisher) }
-          </div>
-        </p>  
-        
+          {displayLogo(data.Publisher)}
+        </p>
       </div>
     </div>
   )

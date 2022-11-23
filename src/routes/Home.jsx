@@ -62,7 +62,7 @@ export default function Home() {
 
   const exampleQueries = [
     "anya", "ball", "spy fam", "kaguya sama spring", 
-    "evangelion 3.0 trice", "chainsaw man", "pokemon", 
+    "evangelion 3.0 thrice", "chainsaw man", "pokemon", 
     "Anime Geek", "Crunchyroll", "CBR", "basketball", 
     "Mikikazu Komatsu", "Liam", "Cordell McWilliams",
     "jojo's bizarre one punch", "collaboration", "new season",
