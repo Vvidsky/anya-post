@@ -13,7 +13,7 @@ Run `npm install` in both react folder and anya-post-server.
 ## Connecting NodeJS with Elasticsearch
 - Put the password for elastic user in ```ELASTIC_PASSWORD = "changeme"``` into .env file
 - put ```http_ca.crt``` file into the anya-post-server directory
-    - For Docker, run ```docker cp es01:/usr/share/elasticsearch/config/certs/http_ca.crt .``` to get the CA certificate.
+    - For Docker, run ```docker cp es-node01:/usr/share/elasticsearch/config/certs/http_ca.crt .``` to get the CA certificate.
     - For nomral installation, see https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/client-connecting.html 
 
 ## Running Anya Post (```npm start```)
